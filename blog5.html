@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Chronicles - Embracing the Wild</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #e0f7fa, #a7ffeb);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            background: #0288d1;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color: #b2ebf2;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .main-content {
+            flex: 3;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            color: #00796b;
+        }
+
+        .sidebar {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar h3 {
+            color: #004d40;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            background: #0288d1;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Nature Chronicles</h1>
+        <p>Discovering the Beauty of the Natural World</p>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#">Home</a> 
+        <a href="#">About</a> 
+        <a href="#">Blog</a> 
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Main Blog Content -->
+    <div class="container">
+        <div class="main-content">
+            <div class="card">
+                <h2>The Magic of Sunrises</h2>
+                <p><strong>Published on:</strong> March 30, 2025</p>
+                <p>
+                    There's something truly magical about watching the sunrise. The sky transforms from darkness to a golden glow, filling the world with warmth and hope.
+                </p>
+                <p><a href="#">Read more...</a></p>
+            </div>
+
+            <div class="card">
+                <h2>Secrets of the Deep Ocean</h2>
+                <p><strong>Published on:</strong> March 25, 2025</p>
+                <p>
+                    The ocean is a vast and mysterious place, home to creatures that seem almost otherworldly. What lies in its unexplored depths?
+                </p>
+                <p><a href="#">Read more...</a></p>
+            </div>
+
+            <div class="card">
+                <h2>How Forests Heal the Mind</h2>
+                <p><strong>Published on:</strong> March 20, 2025</p>
+                <p>
+                    Scientific studies show that being in nature reduces stress and improves mental health. Could a simple walk in the forest be the best therapy?
+                </p>
+                <p><a href="#">Read more...</a></p>
+            </div>
+        </div>
+
+        <!-- Sidebar Section -->
+        <aside class="sidebar">
+            <h3>Recent Posts</h3>
+            <ul>
+                <li><a href="#">The Magic of Sunrises</a></li>
+                <li><a href="#">Secrets of the Deep Ocean</a></li>
+                <li><a href="#">How Forests Heal the Mind</a></li>
+            </ul>
+
+            <h3>Categories</h3>
+            <ul>
+                <li><a href="#">Sunrises & Sunsets</a></li>
+                <li><a href="#">Oceans & Rivers</a></li>
+                <li><a href="#">Forest Therapy</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Nature Chronicles. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+
