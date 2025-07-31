@@ -90,29 +90,43 @@ int SumTuple(int n1 , int n2 ,int tuple1[][3],int tuple2[][3],int sum[][3]){
     sum[0][2]= elem;
     return elem+1;}
 
-void trans(int m , int n , int matrix[m][n]){
-    int transpose[n][m];
+void trans(int m , int tuple[m][3]){
+    int transpose[m][3];
     for(int i = 0 ; i<m ; i++){
-        for(int j = 0 ; j < n ; j++){
-            transpose[j][i]=matrix[i][j];
-        }}    
-     printSparse(n,m,transpose);}
+         transpose[i][0]=tuple[i][1];
+         transpose[i][1]=tuple[i][0];
+         transpose[i][2]=tuple[i][2];
+        }    
+     printTuple(m,transpose);}
+     
+void toMatrix(int n1 , int tuple[][3]){
+    int matrix[tuple[0][0]][tuple[0][1]];
+    for(int i = 0 ; i < tuple[0][0] ; i++ ){
+        for(int j = 0 ; j < tuple[0][1] ; j++ ){
+            matrix[i][j]=0;
+    }}
+    for(int i = 1 ; i<n1 ; i++ ){
+        matrix[tuple[i][0]][tuple[i][1]]=tuple[i][2];
+    }
+    printSparse(tuple[0][0],tuple[0][1],matrix);
+}
+
 
 void main()
 {   
-    int r1,c1,r2,c2;
-    printf("Enter rows of first matrix");
-    scanf("%d",&r1);
-    printf("Enter cols of first matrix");
-    scanf("%d",&c1);
-    printf("Enter rows of second matrix");
-    scanf("%d",&r2);
-    printf("Enter cols of second matrix");
-    scanf("%d",&c2);
-	  int a[r1][c1],b[r2][c2];
-	  printf("Creating Sparse Matrix I\n");
-    sparse(r1,c1,a);
-    printf("Creating Sparse Matrix II\n");
+   	 int r1,c1,r2,c2;
+    	printf("Enter rows of first matrix");
+   	 scanf("%d",&r1);
+    	printf("Enter cols of first matrix");
+    	scanf("%d",&c1);
+    	printf("Enter rows of second matrix");
+    	scanf("%d",&r2);
+    	printf("Enter cols of second matrix");
+    	scanf("%d",&c2);
+    	int a[r1][c1],b[r2][c2];
+    	printf("Creating Sparse Matrix I\n");
+    	sparse(r1,c1,a);
+    	printf("Creating Sparse Matrix II\n");
 	  sparse(r2,c2,b);
 	  printf("The first matrix is\n");
 	  printSparse(r1,c1,a);
@@ -133,5 +147,7 @@ void main()
 	  printf("The Sum Tuple\n");
 	  printTuple(n3,sum);
 	  printf("The Transposed Sum Tuple\n");
-	  trans(n3,3,sum);
+	  trans(n3,sum);
+	  printf("The Sum Matrix\n");
+	  toMatrix(n3,sum);
 }
